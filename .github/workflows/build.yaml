@@ -10,6 +10,6 @@ jobs:
     strategy:
       matrix:
         nodeVersion: [12, 14, 16]
-    uses: aaronnickovich/common-workflows/blob/main/.github/workflows/buildNPM.yaml@main
+    uses: aaronnickovich/common-workflows/.github/workflows/buildNPM.yaml@main
     with:
       nodeVersion: ${{ matrix.nodeVersion }}

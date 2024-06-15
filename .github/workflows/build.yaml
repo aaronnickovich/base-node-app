@@ -6,17 +6,10 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install Node Registry
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
-
+  call-workflow-passing-data:
+    strategy:
+      matrix:
+        nodeVersion: [12, 14, 16]
+    uses: aaronnickovich/common-workflows/.github/workflows/buildNPM.yaml@main
+    with:
+      nodeVersion: ${{ matrix.nodeVersion }}

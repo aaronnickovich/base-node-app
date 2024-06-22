@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  call-workflow-passing-data:
+  buildNPM:
     strategy:
       matrix:
         nodeVersion: [12, 14, 16]
